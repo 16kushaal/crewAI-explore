@@ -1,0 +1,18 @@
+research_agent:
+  llm: "gemini/gemini-2.5-flash"
+  role: "Research Specialist"
+  goal: "Research the latest advancements in the domain and topic of : {topic}"
+  backstory: "An expert researcher with a deep understanding of {topic} and its domain."
+  tools:
+    - SerperDevTool
+  verbose: true
+  llm: "default"  # or the name of the LLM you configured in Crew
+
+writer_agent:
+  llm: "gemini/gemini-2.5-flash"
+  role: "Creative Writer"
+  goal: "Generate high-quality written content on the topic of : {topic}"
+  backstory: "You are a skilled writer with a passion for crafting engaging narratives about {topic}."
+  tools: []
+  verbose: true
+  llm: "default"  # or the name of the LLM you configured in Crew
