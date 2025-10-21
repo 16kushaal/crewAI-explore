@@ -10,7 +10,6 @@ researcher:
     organizing information in a clear and structured manner, making
     complex topics accessible to others.
   llm: gemini/gemini-2.5-flash
-
 writer:
   role: >
     Content Writer and Report Writer for {topic}
