@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 @CrewBase
-class BlogCrew():
-    '''Blog Writing Crew with Researcher and Writer Agents'''
+class ResearchCrew():
+    '''Research Crew with Researcher and Writer Agents'''
     agents_config = "config/agents.yaml"
     tasks_config = "config/tasks.yaml"
 
@@ -36,7 +36,8 @@ class BlogCrew():
     @task
     def write_task(self) -> Task:
         return Task(
-            config=self.tasks_config['write_task']
+            config=self.tasks_config['write_task'],
+            output_file='output/report.md'
         )
     
     @crew
@@ -48,6 +49,6 @@ class BlogCrew():
         )
 
 if __name__ == "__main__":
-    blog_crew = BlogCrew()
-    topic = input("Enter the blog topic: ")
-    blog_crew.crew().kickoff(inputs={"topic":f"{topic}"})
+    research_crew = ResearchCrew()
+    topic = input("Enter the research topic: ")
+    research_crew.crew().kickoff(inputs={"topic":f"{topic}"})
